@@ -5,22 +5,12 @@ var url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 var client = Ti.Network.createHTTPClient({
     onload : function(e) {
-        Ti.API.info("Received text: " + this.responseText);
-
-        let myWords = Alloy.Collections.words;
-        Ti.API.debug("collection without fetch(): ", myWords)
-        myWords.fetch();
-        Ti.API.debug("collection after fetch(): ", myWords)
-
         let wordModel = Alloy.createModel('words', {
-            word: "my",
-            phonetic: "mai"
+            word: JSON.parse(this.responseText)[0].word,
+            phonetic: JSON.parse(this.responseText)[0].phonetic
         });
-        Ti.API.debug("model without save()", wordModel)
         wordModel.save();       // add the alloy_id attribute
-        Ti.API.debug("model after save()", wordModel)
-
-        myWords.add(wordModel)
+        Alloy.Collections.words.add(wordModel)
     },
     onerror : function(e) {
         Ti.API.debug(e.error);
@@ -28,8 +18,14 @@ var client = Ti.Network.createHTTPClient({
     timeout : 5000
 });
 
-client.open("GET", url + wordsList[0]);
-client.send();
+wordsList.forEach((word) => {
+    client.open("GET", url + word);
+    client.send();
+})
+
+// collection log
 setTimeout(() => {
-    Ti.API.debug(Alloy.Collections.words)
-}, 2000)
+    let myWords = Alloy.Collections.words;
+    myWords.fetch()
+    Ti.API.debug(myWords)
+}, 10000)
