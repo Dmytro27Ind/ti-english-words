@@ -1,0 +1,14 @@
+<Alloy>
+  <Collection src="words" />
+  <Tab title="vocabulary" icon="/icons/vocabulary.png">
+    <Window>
+      <ListView>
+        <ListSection>
+          <ListItem title="word"/>
+          <ListItem title="do"/>
+          <ListItem title="only"/>
+        </ListSection>
+      </ListView>
+    </Window>
+  </Tab>
+</Alloy>

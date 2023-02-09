@@ -1,0 +1,7 @@
+<Alloy>
+  <Tab title="settings" icon="/icons/settings.png">
+    <Window id="win3" title="Tab 3">
+      <Label id="label3" color="#999">I am Window 33</Label>
+    </Window>
+  </Tab>
+</Alloy>

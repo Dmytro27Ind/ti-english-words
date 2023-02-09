@@ -1,0 +1,7 @@
+<Alloy>
+  <Tab title="learning" icon="/icons/learning.png">
+    <Window id="win1" title="Tab 1">
+      <Label id="label1" color="#999">I am Window 1</Label>
+    </Window>
+  </Tab>
+</Alloy>
