@@ -1,31 +1,41 @@
+import VolleyPackage from 'com.android.volley.*';
+import VolleyToolbox from 'com.android.volley.toolbox.*';
+import Activity from 'android.app.Activity';
+
+Ti.API.debug("START 1 ______________________________________________________________")
+
 
 let wordsList = [ "example", "audio", "get", "definition", "send", "request"]
 
 var url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-var client = Ti.Network.createHTTPClient({
-    onload : function(e) {
-        let wordModel = Alloy.createModel('words', {
-            word: JSON.parse(this.responseText)[0].word,
-            phonetic: JSON.parse(this.responseText)[0].phonetic
-        });
-        wordModel.save();       // add the alloy_id attribute
-        Alloy.Collections.words.add(wordModel)
-    },
-    onerror : function(e) {
-        Ti.API.debug(e.error);
-    },
-    timeout : 5000
-});
+function startRequest(url) {
+    Ti.API.debug("START 2 ______________________________________________________________")
 
-wordsList.forEach((word) => {
-    client.open("GET", url + word);
-    client.send();
-})
+	const activity = new Activity($.win.activity);
+    Ti.API.debug("activity: ", activity)
 
-// collection log
-setTimeout(() => {
-    let myWords = Alloy.Collections.words;
-    myWords.fetch()
-    Ti.API.debug(myWords)
-}, 10000)
+	const queue = VolleyToolbox.Volley.newRequestQueue(activity);
+
+    Ti.API.debug("START 3 ______________________________________________________________")
+
+	const request = new VolleyToolbox.StringRequest(VolleyPackage.Request.Method.GET, url,
+		new VolleyPackage.Response.Listener({
+			onResponse: (response) => {
+				Ti.API.info('Response is: ' + response);
+				alert('Request completed!');
+			}
+		}),
+		new VolleyPackage.Response.ErrorListener({
+			onErrrorResponse: (error) => {
+				Ti.API.error('HTTP error');
+			}
+		})
+	);
+	queue.add(request);
+}
+
+startRequest(url + wordsList[0])
+// startRequest(url + wordsList[1])
+// startRequest(url + wordsList[2])
+// startRequest(url + wordsList[3])

@@ -45,6 +45,7 @@
 		</manifest>
 	</android>
 	<modules>
+		<module version="7.0.4">hyperloop</module>
 	</modules>
 	<deployment-targets>
 		<target device="android">true</target>

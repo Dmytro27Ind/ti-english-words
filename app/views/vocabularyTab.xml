@@ -1,7 +1,7 @@
 <Alloy>
   <Collection src="words" />
   <Tab title="vocabulary" icon="/icons/vocabulary.png">
-    <Window>
+    <Window id="win">
       <ListView>
         <ListSection>
           <ListItem title="word"/>
