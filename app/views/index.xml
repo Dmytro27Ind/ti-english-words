@@ -1,11 +1,30 @@
 <Alloy>
+  <!-- ____________________  1  ______________________ -->
+  <!-- <NavigationWindow id="navWin">
+    <TabGroup id="tabGroup" theme='Theme.MyLightTheme'>
+      <ActionBar id="actionBar" title="English Words"/>
+      <Require src="learningTab"/>
+      <Require src="vocabularyTab"/>
+      <Require src="settingsTab"/>
+    </TabGroup>
+  </NavigationWindow> -->
+
+  <!-- ____________________  2  ______________________ -->
+  <!-- <Window id="win" title="HTTP Request">
+		<Button id="btn" title="Start request!" onClick="clickRequestButton" />
+	</Window> -->
+
+  <!-- ____________________  3  ______________________ -->
+  <!-- <Window id="win" theme='Theme.MyLightTheme'>
+    <Button onClick="setDark">Set Dark</Button>
+  </Window> -->
+
+  <!-- ____________________  4  ______________________ -->
   <TabGroup id="tabGroup" theme='Theme.MyLightTheme'>
     <ActionBar id="actionBar" title="English Words"/>
     <Require src="learningTab"/>
     <Require src="vocabularyTab"/>
     <Require src="settingsTab"/>
   </TabGroup>
-  <!-- <Window id="win" title="HTTP Request">
-		<Button id="btn" title="Start request!" onClick="clickRequestButton" />
-	</Window> -->
+
 </Alloy>
