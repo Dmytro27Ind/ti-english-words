@@ -1,6 +1,6 @@
 <Alloy>
   <Collection src="words" />
-  <Tab id="vocabularyTab" title="vocabulary" icon="/icons/vocabulary.png">
+  <Tab id="VocabularyTab" title="vocabulary" icon="/icons/vocabulary.png">
     <Window id="win">
       <ListView editing="true">
         <!-- Custom item template for words -->

@@ -20,7 +20,7 @@
   </Window> -->
 
   <!-- ____________________  4  ______________________ -->
-  <TabGroup id="tabGroup" theme='Theme.MyLightTheme'>
+  <TabGroup id="tabGroup" theme='Theme.MyDarkTheme'>
     <ActionBar id="actionBar" title="English Words"/>
     <Require src="learningTab"/>
     <Require src="vocabularyTab"/>
