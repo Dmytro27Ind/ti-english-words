@@ -1,0 +1,33 @@
+"ListView": {
+    // separatorColor: 'transparent'
+}
+
+".word-wrapper": {
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    // backgroundColor: "#fff000"
+}
+
+".wordLable": {
+    // backgroundColor: "#000fff",
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+    left: 20,
+    top: 10,
+    bottom: 5
+}
+
+".phoneticLable": {
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+    left: 20,
+    top: 5,
+    bottom: 10
+}
+
+".playButton": {
+    right: 10,
+    style: Ti.UI.BUTTON_STYLE_TEXT
+}

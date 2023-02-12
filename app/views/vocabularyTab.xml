@@ -1,12 +1,23 @@
 <Alloy>
   <Collection src="words" />
-  <Tab title="vocabulary" icon="/icons/vocabulary.png">
+  <Tab id="vocabularyTab" title="vocabulary" icon="/icons/vocabulary.png">
     <Window id="win">
-      <ListView>
-        <ListSection>
-          <ListItem title="word"/>
-          <ListItem title="do"/>
-          <ListItem title="only"/>
+      <ListView editing="true">
+        <!-- Custom item template for words -->
+        <Templates>
+          <ItemTemplate name="wordTemplate">
+            <View class="word-wrapper" layout="vertical">
+              <Label bindId="word" class="wordLable" touchEnable="false"/>
+              <Label bindId="phonetic" class="phoneticLable" touchEnable="false"/>
+            </View>
+            <Button class="playButton" image="/icons/play.png">Audio</Button>
+          </ItemTemplate>
+        </Templates>
+        <ListSection dataCollection="words">
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
         </ListSection>
       </ListView>
     </Window>

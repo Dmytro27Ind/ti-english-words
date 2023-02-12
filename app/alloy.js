@@ -1,11 +1,27 @@
-// The contents of this file will be executed before any of
-// your view controllers are ever executed, including the index.
-// You have access to all functionality on the `Alloy` namespace.
-//
-// This is a great place to do any initialization for your app
-// or create any global variables/functions that you'd like to
-// make available throughout your app. You can easily make things
-// accessible globally by attaching them to the `Alloy.Globals`
-// object. For example:
-//
-// Alloy.Globals.someGlobalFunction = function(){};
+// import VolleyPackage from 'com.android.volley.*';
+// import VolleyToolbox from 'com.android.volley.toolbox.*';
+// import Activity from 'android.app.Activity';
+
+// let queue = undefined;
+
+// Alloy.Globals.startRequest = function(url, winActivity) {
+// 	const activity = new Activity(winActivity);
+//     Ti.API.debug('Request Queue: ', queue);
+
+//     if (!queue)
+//         queue = VolleyToolbox.Volley.newRequestQueue(activity);
+
+// 	const request = new VolleyToolbox.StringRequest(VolleyPackage.Request.Method.GET, url,
+// 		new VolleyPackage.Response.Listener({
+// 			onResponse: (response) => {
+// 				Ti.API.info('Response is: ' + JSON.parse(response)[0].word);
+// 			}
+// 		}),
+// 		new VolleyPackage.Response.ErrorListener({
+// 			onErrrorResponse: (error) => {
+// 				Ti.API.error('HTTP error');
+// 			}
+// 		})
+// 	);
+// 	queue.add(request);
+// }
