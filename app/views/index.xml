@@ -21,7 +21,7 @@
 
   <!-- ____________________  4  ______________________ -->
   <TabGroup id="tabGroup" theme='Theme.MyDarkTheme'>
-    <ActionBar id="actionBar" title="English Words"/>
+    <!-- <ActionBar id="actionBar" title="English Words"/> -->
     <Require src="learningTab"/>
     <Require src="vocabularyTab"/>
     <Require src="settingsTab"/>

@@ -40,4 +40,17 @@
 // }
 
 //  ____________________  4  ______________________
-$.tabGroup.open()
+$.tabGroup.open().then(() => {
+    // Ti.API.debug("___________________________________")
+    // Ti.API.debug($.tabGroup.activity)
+    // Ti.API.debug("___________________________________")
+    // $.tabGroup.activity.actionBar.title = "Words"
+    // Ti.API.debug($.tabGroup.activity)
+    // Ti.API.debug("___________________________________")
+    // Ti.API.debug("+++++++++", Alloy.Globals.tabGroupActivity)
+    Alloy.Globals.tabGroupActivity = $.tabGroup.activity
+    // Ti.API.debug("+++++++++", Alloy.Globals.tabGroupActivity)
+    // Alloy.Globals.tabGroupActivity.actionBar.title = "My Words"
+    // Ti.API.debug($.tabGroup.activity)
+    // Ti.API.debug("___________________________________")
+})

@@ -2,7 +2,17 @@
   <Collection src="words" />
   <Tab id="VocabularyTab" title="vocabulary" icon="/icons/vocabulary.png">
     <Window id="win">
-      <ListView editing="true">
+      <Toolbar id="mainToolbar" visible="true" hiddenBehavior="Ti.UI.HIDDEN_BEHAVIOR_GONE" platform="android"/>
+      <Toolbar id="editToolbar" visible="false" hiddenBehavior="Ti.UI.HIDDEN_BEHAVIOR_GONE" platform="android"/>
+      <ListView
+        id="listView"
+        showSelectionCheck="true"
+        allowsSelectionDuringEditing="true"
+        allowsMultipleSelectionDuringEditing="true"
+        onItemclick="onItemClicked"
+        onLongpress="onLongPressed"
+        onItemsselected="onItemsSelected"
+      >
         <!-- Custom item template for words -->
         <Templates>
           <ItemTemplate name="wordTemplate">
@@ -14,10 +24,10 @@
           </ItemTemplate>
         </Templates>
         <ListSection dataCollection="words">
-          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
-          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
-          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
-          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}" canEdit="true"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}"/>
+          <ListItem template="wordTemplate" word:text="{word}" phonetic:text="{phonetic}"/>
         </ListSection>
       </ListView>
     </Window>

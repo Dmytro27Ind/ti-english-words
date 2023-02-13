@@ -25,3 +25,6 @@
 // 	);
 // 	queue.add(request);
 // }
+
+
+Alloy.Globals.tabGroupActivity = "tab group";

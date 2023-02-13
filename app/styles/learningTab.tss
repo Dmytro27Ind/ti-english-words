@@ -1,0 +1,6 @@
+"View": {
+    width: 200,
+    height: 200,
+    borderWidth: 2,
+    borderColor: "#fff"
+}
